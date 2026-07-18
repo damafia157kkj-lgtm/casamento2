@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casamentos — Eterno Amor</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<section class="section-tight" style="padding-top:50px;">
+  <div class="container">
+    <div class="section-header" style="margin-bottom:34px;">
+      <span class="eyebrow">Todas as celebrações</span>
+      <h2>Casamentos cadastrados</h2>
+      <p>Encontre um casamento pelo nome dos noivos ou pela cidade da celebração.</p>
+    </div>
+
+    <div class="filter-bar">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input type="text" id="busca-input" placeholder="Buscar por nome dos noivos, cidade ou local...">
+      </div>
+      <select id="ordenar-select">
+        <option value="data-asc">Data (mais próxima)</option>
+        <option value="data-desc">Data (mais distante)</option>
+        <option value="nome-asc">Nome dos noivos (A-Z)</option>
+      </select>
+    </div>
+
+    <div class="wedding-grid" id="lista-grid"></div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script src="js/api.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/casamentos.js"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eterno Amor — Celebrações e Casamentos</title>
+<meta name="description" content="Descubra e celebre histórias de casamento: datas, locais e todos os detalhes de cada cerimônia em um só lugar.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="site-header"></div>
+
+<section class="hero" id="hero">
+  <!-- slides injetados via JS -->
+  <div class="hero-content">
+    <span class="hero-eyebrow">Bem-vindos ao</span>
+    <h1>Eterno Amor</h1>
+    <p>O espaço onde cada casamento ganha sua própria página: a data, o local, os noivos e todos os detalhes de um dia inesquecível.</p>
+    <div class="hero-actions">
+      <a href="casamentos.html" class="btn btn-primary">Ver casamentos</a>
+      <a href="admin/login.html" class="btn btn-outline" style="border-color:#fff;color:#fff;">Cadastrar casamento</a>
+    </div>
+  </div>
+  <button class="hero-nav prev" id="hero-prev" aria-label="Slide anterior">&#8249;</button>
+  <button class="hero-nav next" id="hero-next" aria-label="Próximo slide">&#8250;</button>
+  <div class="hero-dots" id="hero-dots"></div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Por que o Eterno Amor</span>
+      <h2>Tudo sobre cada casamento, em um só lugar</h2>
+      <p>Organizamos cada celebração com carinho: informações claras, cardápio completo e a história de cada casal.</p>
+    </div>
+    <div class="features">
+      <div class="feature-card">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>
+        </div>
+        <h3>Data e local</h3>
+        <p>Consulte dia, horário e endereço de cada cerimônia sem complicação.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 19h16M6 19V9a2 2 0 012-2h8a2 2 0 012 2v10M9 19V13h6v6"/></svg>
+        </div>
+        <h3>Cardápio completo</h3>
+        <p>Comidas e bebidas de cada festa, organizadas para facilitar o planejamento.</p>
+      </div>
+      <div class="feature-card">
+        <div class="icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7.5-4.8-10.2-9.3C.2 8.7 1.4 5 5 4.2c2.1-.5 4 .5 5 2.3 1-1.8 2.9-2.8 5-2.3 3.6.8 4.8 4.5 3.2 7.5C19.5 16.2 12 21 12 21z"/></svg>
+        </div>
+        <h3>Histórias reais</h3>
+        <p>Cada casal com sua própria página, contando um pouco da sua celebração.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider-heart">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.8-10.2-9.3C.2 8.7 1.4 5 5 4.2c2.1-.5 4 .5 5 2.3 1-1.8 2.9-2.8 5-2.3 3.6.8 4.8 4.5 3.2 7.5C19.5 16.2 12 21 12 21z"/></svg>
+</div>
+
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header">
+      <span class="eyebrow">Próximas celebrações</span>
+      <h2>Casamentos em destaque</h2>
+    </div>
+    <div class="wedding-grid" id="destaques-grid">
+      <!-- preenchido via JS -->
+    </div>
+    <div style="text-align:center; margin-top:44px;">
+      <a href="casamentos.html" class="btn btn-outline">Ver todos os casamentos</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="cta-band">
+      <h2>Vai celebrar seu casamento?</h2>
+      <p>Cadastre as informações do seu grande dia — data, local e cardápio — e compartilhe com quem você ama.</p>
+      <a href="admin/login.html" class="btn btn-gold">Cadastrar meu casamento</a>
+    </div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<script src="js/api.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

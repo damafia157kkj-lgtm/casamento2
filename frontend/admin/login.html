@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Entrar — Painel administrativo</title>
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  body{ display:flex; align-items:center; justify-content:center; min-height:100vh; background: linear-gradient(160deg, var(--wine-dark), var(--wine)); }
+  .login-card{ background: var(--white); border-radius: 10px; padding: 44px 38px; max-width: 380px; width: 92%; box-shadow: 0 20px 50px rgba(0,0,0,.3); }
+  .login-brand{ text-align:center; margin-bottom: 26px; }
+  .login-brand svg{ width: 34px; height: 34px; color: var(--gold); margin-bottom: 8px; }
+  .login-brand h1{ font-size: 1.4rem; margin-bottom: 2px; }
+  .login-brand p{ color: var(--ink-soft); font-size: .85rem; margin:0; }
+</style>
+</head>
+<body>
+
+<div class="login-card">
+  <div class="login-brand">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 21s-7.5-4.8-10.2-9.3C.2 8.7 1.4 5 5 4.2c2.1-.5 4 .5 5 2.3 1-1.8 2.9-2.8 5-2.3 3.6.8 4.8 4.5 3.2 7.5C19.5 16.2 12 21 12 21z"/></svg>
+    <h1>Área restrita</h1>
+    <p>Acesso exclusivo do administrador do site.</p>
+  </div>
+
+  <div id="alerta-area"></div>
+
+  <form id="form-login" novalidate>
+    <div class="form-group">
+      <label for="f-usuario">Usuário</label>
+      <input type="text" id="f-usuario" autocomplete="username" placeholder="Seu usuário">
+      <span class="field-error">Informe o usuário.</span>
+    </div>
+    <div class="form-group">
+      <label for="f-senha">Senha</label>
+      <input type="password" id="f-senha" autocomplete="current-password" placeholder="Sua senha">
+      <span class="field-error">Informe a senha.</span>
+    </div>
+    <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; margin-top:8px;">Entrar</button>
+  </form>
+
+  <p style="text-align:center; margin-top:22px;"><a href="../index.html" style="font-size:.85rem; color:var(--ink-soft);">&larr; Voltar ao site</a></p>
+</div>
+
+<script src="../js/api.js"></script>
+<script src="js/admin-layout.js"></script>
+<script src="js/admin-auth.js"></script>
+</body>
+</html>

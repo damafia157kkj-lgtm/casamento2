@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Comidas e bebidas — Eterno Amor</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="admin-shell">
+  <div id="admin-sidebar"></div>
+
+  <main class="admin-main">
+    <div class="admin-topbar">
+      <div>
+        <h1 style="font-size:1.6rem; margin-bottom:2px;">Comidas e bebidas</h1>
+        <p style="color:var(--ink-soft); margin:0;">Cadastre o cardápio de cada casamento.</p>
+      </div>
+      <button class="btn btn-primary" id="btn-novo">+ Novo item</button>
+    </div>
+
+    <div id="alerta-area"></div>
+
+    <!-- ===== Formulário ===== -->
+    <div class="card" id="form-card" style="display:none;">
+      <h2 id="form-titulo">Novo item</h2>
+      <form id="form-item" novalidate>
+        <input type="hidden" id="f-id">
+        <div class="form-grid">
+          <div class="form-group full">
+            <label for="f-casamento">Casamento</label>
+            <select id="f-casamento"></select>
+            <span class="field-error">Selecione o casamento.</span>
+          </div>
+          <div class="form-group">
+            <label for="f-nome">Nome do item</label>
+            <input type="text" id="f-nome" placeholder="Ex.: Risoto de Camarão">
+            <span class="field-error">Informe o nome do item.</span>
+          </div>
+          <div class="form-group">
+            <label for="f-tipo">Tipo</label>
+            <select id="f-tipo">
+              <option value="comida">Comida</option>
+              <option value="bebida">Bebida</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="f-preco">Preço (R$)</label>
+            <input type="number" id="f-preco" min="0" step="0.01" placeholder="Ex.: 68.00">
+            <span class="field-error">Informe um preço válido, maior que zero.</span>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Salvar item</button>
+          <button type="button" class="btn btn-ghost" id="btn-cancelar">Cancelar</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- ===== Filtros ===== -->
+    <div class="filter-bar">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input type="text" id="busca-input" placeholder="Buscar item pelo nome...">
+      </div>
+      <select id="filtro-casamento"></select>
+      <select id="filtro-tipo">
+        <option value="">Todos os tipos</option>
+        <option value="comida">Comidas</option>
+        <option value="bebida">Bebidas</option>
+      </select>
+    </div>
+
+    <!-- ===== Tabela ===== -->
+    <div class="card" style="padding:0; overflow-x:auto;">
+      <table>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Tipo</th>
+            <th>Casamento</th>
+            <th>Preço</th>
+            <th style="text-align:right;">Ações</th>
+          </tr>
+        </thead>
+        <tbody id="tabela-corpo"></tbody>
+      </table>
+    </div>
+  </main>
+</div>
+
+<div class="modal-overlay" id="modal-excluir">
+  <div class="modal">
+    <h3>Excluir item?</h3>
+    <p>Essa ação não pode ser desfeita.</p>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" id="modal-cancelar">Cancelar</button>
+      <button class="btn btn-danger" id="modal-confirmar">Excluir</button>
+    </div>
+  </div>
+</div>
+
+<script src="../js/api.js"></script>
+<script src="js/admin-layout.js"></script>
+<script src="js/admin-cardapio.js"></script>
+</body>
+</html>

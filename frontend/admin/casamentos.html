@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gerenciar casamentos — Eterno Amor</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<div class="admin-shell">
+  <div id="admin-sidebar"></div>
+
+  <main class="admin-main">
+    <div class="admin-topbar">
+      <div>
+        <h1 style="font-size:1.6rem; margin-bottom:2px;">Casamentos</h1>
+        <p style="color:var(--ink-soft); margin:0;">Cadastre, edite ou remova as celebrações do site.</p>
+      </div>
+      <button class="btn btn-primary" id="btn-novo">+ Novo casamento</button>
+    </div>
+
+    <div id="alerta-area"></div>
+
+    <!-- ===== Formulário de cadastro/edição ===== -->
+    <div class="card" id="form-card" style="display:none;">
+      <h2 id="form-titulo">Novo casamento</h2>
+      <form id="form-casamento" novalidate>
+        <input type="hidden" id="f-id">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="f-noivo">Nome do noivo</label>
+            <input type="text" id="f-noivo" placeholder="Ex.: Arthur Carvalho">
+            <span class="field-error">Informe o nome do noivo.</span>
+          </div>
+          <div class="form-group">
+            <label for="f-noiva">Nome da noiva</label>
+            <input type="text" id="f-noiva" placeholder="Ex.: Camila Ferraz">
+            <span class="field-error">Informe o nome da noiva.</span>
+          </div>
+          <div class="form-group">
+            <label for="f-data">Data</label>
+            <input type="date" id="f-data">
+            <span class="field-error">Selecione a data.</span>
+          </div>
+          <div class="form-group">
+            <label for="f-horario">Horário</label>
+            <input type="time" id="f-horario">
+            <span class="field-error">Informe o horário.</span>
+          </div>
+          <div class="form-group">
+            <label for="f-local">Local (espaço/salão)</label>
+            <input type="text" id="f-local" placeholder="Ex.: Espaço Villa Jardim">
+            <span class="field-error">Informe o local.</span>
+          </div>
+          <div class="form-group">
+            <label for="f-cidade">Cidade</label>
+            <input type="text" id="f-cidade" placeholder="Ex.: Belo Horizonte - MG">
+            <span class="field-error">Informe a cidade.</span>
+          </div>
+          <div class="form-group full">
+            <label for="f-foto">URL da foto de capa</label>
+            <input type="url" id="f-foto" placeholder="https://...">
+            <span class="field-error">Informe uma URL de imagem válida.</span>
+          </div>
+          <div class="form-group full">
+            <label for="f-descricao">Descrição</label>
+            <textarea id="f-descricao" placeholder="Conte um pouco sobre esta celebração..."></textarea>
+            <span class="field-error">Escreva uma breve descrição (mín. 10 caracteres).</span>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary">Salvar casamento</button>
+          <button type="button" class="btn btn-ghost" id="btn-cancelar">Cancelar</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- ===== Busca ===== -->
+    <div class="filter-bar">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+        <input type="text" id="busca-input" placeholder="Buscar por noivos, local ou cidade...">
+      </div>
+    </div>
+
+    <!-- ===== Tabela ===== -->
+    <div class="card" style="padding:0; overflow-x:auto;">
+      <table>
+        <thead>
+          <tr>
+            <th>Noivos</th>
+            <th>Data</th>
+            <th>Local</th>
+            <th>Cidade</th>
+            <th style="text-align:right;">Ações</th>
+          </tr>
+        </thead>
+        <tbody id="tabela-corpo"></tbody>
+      </table>
+    </div>
+  </main>
+</div>
+
+<!-- ===== Modal de confirmação de exclusão ===== -->
+<div class="modal-overlay" id="modal-excluir">
+  <div class="modal">
+    <h3>Excluir casamento?</h3>
+    <p>Essa ação não pode ser desfeita. Os itens do cardápio ligados a ele também serão removidos.</p>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" id="modal-cancelar">Cancelar</button>
+      <button class="btn btn-danger" id="modal-confirmar">Excluir</button>
+    </div>
+  </div>
+</div>
+
+<script src="../js/api.js"></script>
+<script src="js/admin-layout.js"></script>
+<script src="js/admin-casamentos.js"></script>
+</body>
+</html>
