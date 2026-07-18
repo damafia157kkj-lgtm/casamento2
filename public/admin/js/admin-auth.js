@@ -37,10 +37,13 @@ async function tratarLogin(e){
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  const formLogin = document.getElementById("form-login");
+  if(!formLogin) return; // não é a tela de login, não faz nada aqui
+
   // Se já estiver logado e cair na tela de login, manda direto pro painel
   if(AuthAPI.estaLogado()){
     window.location.href = "casamentos.html";
     return;
   }
-  document.getElementById("form-login").addEventListener("submit", tratarLogin);
+  formLogin.addEventListener("submit", tratarLogin);
 });
