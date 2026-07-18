@@ -8,7 +8,14 @@
    durante o desenvolvimento.
    ========================================================= */
 
-const API_BASE_URL = "http://localhost:3000/api";
+/* Em desenvolvimento local (rodando o front direto no navegador) ele usa
+   localhost:3000. Em produção (Railway) ele usa a URL pública do serviço
+   de backend — troque "SEU-BACKEND-AQUI" pelo domínio público real do
+   seu serviço de backend no Railway (Settings > Networking > Public Networking). */
+const API_BASE_URL =
+  (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1")
+    ? "http://localhost:3000/api"
+    : "https://SEU-BACKEND-AQUI.up.railway.app/api";
 
 /* ---------- Autenticação (login do dono do site) ---------- */
 const AuthAPI = {
