@@ -15,7 +15,7 @@
 const API_BASE_URL =
   (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1")
     ? "http://localhost:3000/api"
-    : "https://SEU-BACKEND-AQUI.up.railway.app/api";
+    : "https://sincere-illumination-production-f131.up.railway.app/api";
 
 /* ---------- Autenticação (login do dono do site) ---------- */
 const AuthAPI = {
