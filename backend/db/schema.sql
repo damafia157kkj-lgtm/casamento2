@@ -3,10 +3,7 @@
 -- Etapa 2: 2 tabelas relacionadas, PK, FK e registros de teste
 -- =========================================================
 
-CREATE DATABASE IF NOT EXISTS site_casamento
-  CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-
-USE site_casamento;
+USE railway;
 
 -- ---------------------------------------------------------
 -- Tabela 1: casamentos
